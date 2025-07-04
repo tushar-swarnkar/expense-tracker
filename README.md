@@ -56,6 +56,28 @@ This repository contains the backend implementation of the **Expense Tracker** a
 #### ⚙️ Admin-only
 - **`PUT /admin/set-role/{userId}`** – Promote user to admin
 
+## Spring configurations for the project: 
+### add the following configurations in the "/src/main/resources/application.properties" file:
+```properties
+# Application Info
+spring.application.name=expense-tracker
+
+# Server Configuration
+server.port=9999
+
+# Database Configuration
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver        # tells Spring Boot to use the MySQL Connector/J (JDBC driver)
+spring.datasource.url=jdbc:mysql://localhost:3306/expense_tracker   # configuration key to set the JDBC URL
+spring.datasource.username=YOUR_DB_USERNAME
+spring.datasource.password=YOUR_DB_PASSWORD
+
+# JPA & Hibernate Settings
+spring.jpa.show-sql=true                         # shows the SQL query 
+spring.jpa.hibernate.ddl-auto=update             # automatically updates your database schema
+spring.jpa.properties.hibernate.format_sql=true  # formatting the SQL query in readable form
+```
+
+
 ## 📂 Package Structure
 ```yaml
 📦 com.stew.expense_tracker
